@@ -1,37 +1,36 @@
 #include <stdio.h>
 #include <math.h>
-#include "NumClass.h"
 
-int countDigit(int num){
-   int count=0;
-   while(num>0){
-    num=num/10;
-    count++;
-   } 
-   return count;
-}
-int isPalindrom(int num){
-   int reverse=num%10;
-   int saveNum=num;
-   int temp=num;
-   int count=countDigit(temp);
-   while(count>1){
-    reverse=reverse*10+saveNum/10;
-    count--;
-    saveNum=saveNum/10;
-   }
-    return (num==reverse);
+int isArmstrong(int n)
+{
+    int temp = n;
+    int count = 0;
+    int sum = 0;
+    while (temp!=0) 
+    {
+        temp = temp/10;
+        count++;
     }
-
-int isArmstrong(int num){
-   int saveNum=num;
-   int sum=0;
-   int temp=num;
-   int count =countDigit(temp);
-   while(saveNum>0){
-      int digit=saveNum%10;
-      sum=sum+pow(digit,count);
-      saveNum=saveNum/10;
-   }
-   return (sum==num);
+    temp = n;
+    while (temp!=0)
+    {
+        sum = sum+pow(temp%10, count);
+        temp = temp/10;
+    }
+    if (sum==n) return 1;
+    else return 0;    
 }
+
+int isPalindrome(int n)
+{
+    int temp = n; 
+    int palindrome=0;
+    while (temp!=0)
+    {
+        palindrome=palindrome*10+temp%10;
+        temp=temp/10;
+    }
+    if (n==palindrome) return 1;
+    else return 0;
+}
+
