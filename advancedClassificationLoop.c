@@ -31,6 +31,7 @@ int isArmstrong(int num){
    while(saveNum>0){
       int digit=saveNum%10;
       sum=sum+pow(digit,count);
+      saveNum=saveNum/10;
    }
    return (sum==num);
 }
