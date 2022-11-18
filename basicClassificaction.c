@@ -1,32 +1,33 @@
 #include <stdio.h>
 #include <math.h>
-#include "NumClass.h"
 
-int factorial(int a){
-    int mul=1;
-    while(a>1){
-        mul=mul*a;
-        a=a-1;
+int isPrime(int n)
+{
+    if (n==0) return 0;
+    if (n==1) return 1;
+    int sn = sqrt((double)(n));
+    for (int i = 2; i <= sn; i++)
+    {
+        if (n%i==0) return 0;
     }
-    return mul;
+    return 1; 
 }
 
-int isStrong(int num){
-    int sum=0, saveNum=num;
-    while(num>0){
-        int digit=num%10;
-        sum=sum+factorial(digit);
-        num=num/10;
+int isStrong(int n)
+{
+    int temp = n;
+    int sum = 0;
+    int fact = 1;
+    while (temp!=0)
+    {
+        for (int i = 1; i <=temp%10; i++)
+        {
+            fact*=i;
+        }
+        sum += fact; 
+        temp = temp/10;
+        fact = 1;
     }
-    return (sum==saveNum);
-
-}   
-
-int isPrime(int num){
-   int i;
-   for(i=2;i<=sqrt(num);i++){
-    if(num%i==0)
-    return 0;
-   }
-   return 1;
-    }
+        if (sum==n) return 1;
+        else return 0;
+}
