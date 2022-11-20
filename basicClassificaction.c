@@ -13,21 +13,23 @@ int isPrime(int n)
     return 1; 
 }
 
-int isStrong(int n)
-{
-    int temp = n;
-    int sum = 0;
-    int fact = 1;
-    while (temp!=0)
-    {
-        for (int i = 1; i <=temp%10; i++)
-        {
-            fact*=i;
-        }
-        sum += fact; 
-        temp = temp/10;
-        fact = 1;
-    }
-        if (sum==n) return 1;
-        else return 0;
+int factorial(int n){    
+if (n==1|| n==0) return 1;
+else return n*factorial(n-1);
 }
+
+int isStrong(int n){
+if(n==0) return 0;
+int tempStrong= n;
+int sum=0;
+while(tempStrong>0){
+    sum=sum+factorial(tempStrong%10);
+    tempStrong=tempStrong/10;
+}
+return n==sum;
+
+}
+
+
+
+

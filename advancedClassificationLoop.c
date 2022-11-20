@@ -21,7 +21,7 @@ int isArmstrong(int n)
     else return 0;    
 }
 
-int isPalindrom(int n)
+int isPalindrome(int n)
 {
     int temp = n; 
     int palindrome=0;

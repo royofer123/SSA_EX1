@@ -9,17 +9,17 @@ int isArmstrongRecur(int n, int count)
     }
     return 0;
 }
+int countDigit(int n){
+    if(n>=0 && n<=9) return 1;
+    return 1+countDigit(n/10);  
+}
 
 int isArmstrong(int n)
 {
     int temp = n;
-    int count = 0;
-    while (temp!=0) 
-    {
-        temp = temp/10;
-        count++;
-    }
-    if (n==isArmstrongRecur(n,count)) return 1;
+    int count = countDigit(n);
+    
+    if (n==isArmstrongRecur(temp,count)) return 1;
     else return 0; 
 }
 
@@ -35,7 +35,7 @@ int isPalindromeRecur(int n, int rn)
 
 }
 
-int isPalindrom(int n)
+int isPalindrome(int n)
 {
 
     if (n==isPalindromeRecur(n, 0)) return 1;

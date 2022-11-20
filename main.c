@@ -5,23 +5,9 @@ int main()
 {
     int s=0;
     int e=0;
-
-    ///printf("enter two numbers");
-    int st= scanf("%d", &s);
-    int et= scanf("%d", &e);
-    if (et!=1||st!=1||e<0||s<0) 
-    {
-    printf("UNFIXABLE USER ERROR\n");
-    printf("EXITING...\n");
-    return 1; 
-    } 
-    if (e<s) 
-    {
-        int temp = s;
-        s=e;
-        e=temp;
-    }
-
+    printf("enter two numbers");
+     scanf("%d", &s);
+     scanf("%d", &e);
     printf("The Armstrong numbers are:");
     for (int i = s; i <= e; i++)
     {
@@ -31,7 +17,7 @@ int main()
     printf("\nThe Palindromes are:");
     for (int i = s; i <= e; i++)
     {
-        if (isPalindrom(i)) printf(" %d",i);
+        if (isPalindrome(i)) printf(" %d",i);
     }    
 
     printf("\nThe Prime numbers are:");
@@ -47,4 +33,5 @@ int main()
     }  
         printf("\n");
     return 0;
+
 }
