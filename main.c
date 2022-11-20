@@ -5,9 +5,9 @@ int main()
 {
     int s=0;
     int e=0;
-    //printf("enter two numbers");
-     scanf("%d", &s);
-     scanf("%d", &e);
+    printf("enter two numbers");
+    scanf("%d", &s);
+    scanf("%d", &e);
     printf("The Armstrong numbers are:");
     for (int i = s; i <= e; i++)
     {
