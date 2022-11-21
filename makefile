@@ -18,19 +18,19 @@ main.o: main.c
 ##Create libraries
 #Static-
 loops: libclassloops.a
-libclassloops.a: basicClassification.o advancedClassificationLoop.o main.o
+libclassloops.a: basicClassification.o advancedClassificationLoop.o 
 	$(AR) libclassloops.a basicClassification.o advancedClassificationLoop.o
 	ranlib libclassloops.a
 recursives: libclassrec.a
-libclassrec.a: basicClassification.o advancedClassificationRecursion.o main.o
+libclassrec.a: basicClassification.o advancedClassificationRecursion.o 
 	$(AR) libclassrec.a basicClassification.o advancedClassificationRecursion.o
 	ranlib libclassrec.a
 #Dynamic
 lloopd: libclassloops.so
-libclassloops.so: basicClassification.o advancedClassificationLoop.o main.o
+libclassloops.so: basicClassification.o advancedClassificationLoop.o 
 	$(GCC) $(FLAGS) -shared -o libclassloops.so basicClassification.o advancedClassificationLoop.o -lm
 recursived: libclassrec.so
-libclassrec.so: basicClassification.o advancedClassificationRecursion.o main.o
+libclassrec.so: basicClassification.o advancedClassificationRecursion.o 
 	$(GCC) $(FLAGS) -shared -o libclassrec.so basicClassification.o advancedClassificationRecursion.o -lm
 
 #Making main files
