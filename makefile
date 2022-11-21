@@ -19,7 +19,7 @@ main.o: main.c
 
 ##Create libraries
 #Static-
-loops: libclassloops.a
+lloops: libclassloops.a
 libclassloops.a: basicClassification.o advancedClassificationLoop.o main.o
 	$(AR) libclassloops.a basicClassification.o advancedClassificationLoop.o
 	ranlib libclassloops.a
