@@ -41,7 +41,7 @@ maindloop: libclassloops.so main.o
 maindrec: libclassrec.so main.o
 	$(GCC) $(FLAGS) main.o ./libclassrec.so -o maindrec -lm
 
-all: mains maindloop maindrec
+all: loops loopd recursived recursives mains maindloop maindrec
 
 clean:
 	rm -f *.o *.a *.so mains maindloop maindrec
