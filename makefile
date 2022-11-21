@@ -20,12 +20,12 @@ main.o: main.c
 ##Create libraries
 #Static-
 loops: libclassloops.a
-libclassloops.a: basicClassification.o advancedClassificationLoop.o
+libclassloops.a: basicClassification.o advancedClassificationLoop.o main.o
 	$(AR) libclassloops.a basicClassification.o advancedClassificationLoop.o
 	ranlib libclassloops.a
 recursives: libclassrec.a
-libclassrec.a: advancedClassificationRecursion.o basicClassification.o 
-	$(AR) libclassrec.a advancedClassificationRecursion.o basicClassification.o
+libclassrec.a: basicClassification.o advancedClassificationRecursion.o main.o
+	$(AR) libclassrec.a basicClassification.o advancedClassificationRecursion.o
 	ranlib libclassrec.a
 
 #Dynamic
