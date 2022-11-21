@@ -5,8 +5,8 @@ AR = ar -rcs
 FLAGS = -Wall -g
 
 ##Create .o files
-basicClassificaction.o: basicClassificaction.c  
-	$(GCC) $(FLAGS) -c basicClassificaction.c
+basicClassification.o: basicClassification.c  
+	$(GCC) $(FLAGS) -c basicClassification.c
 
 advancedClassificationLoop.o: advancedClassificationLoop.c 
 	$(GCC) $(FLAGS) -c advancedClassificationLoop.c
@@ -19,23 +19,23 @@ main.o: main.c
 
 ##Create libraries
 #Static-
-lloops: libclassloops.a
+loops: libclassloops.a
 libclassloops.a: basicClassification.o advancedClassificationLoop.o
 	$(AR) libclassloops.a basicClassification.o advancedClassificationLoop.o
 	ranlib libclassloops.a
 recursives: libclassrec.a
-libclassrec.a: advancedClassificationRecursion.o basicClassificaction.o 
-	$(AR) libclassrec.a advancedClassificationRecursion.o basicClassificaction.o
+libclassrec.a: advancedClassificationRecursion.o basicClassification.o 
+	$(AR) libclassrec.a advancedClassificationRecursion.o basicClassification.o
 	ranlib libclassrec.a
 
 #Dynamic
 loopd: libclassloops.so
-libclassloops.so: basicClassificaction.o advancedClassificationLoop.o 
-	$(GCC) $(FLAGS) -shared -o libclassloops.so basicClassificaction.o advancedClassificationLoop.o
+libclassloops.so: basicClassification.o advancedClassificationLoop.o 
+	$(GCC) $(FLAGS) -shared -o libclassloops.so basicClassification.o advancedClassificationLoop.o
 	
 recursived: libclassrec.so
-libclassrec.so : basicClassificaction.o advancedClassificationRecursion.o 
-	$(GCC) $(FLAGS) -shared -o libclassrec.so basicClassificaction.o advancedClassificationRecursion.o
+libclassrec.so : basicClassification.o advancedClassificationRecursion.o 
+	$(GCC) $(FLAGS) -shared -o libclassrec.so basicClassification.o advancedClassificationRecursion.o
 
 #Making main files
 mains: libclassrec.a main.o
