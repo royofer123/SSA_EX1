@@ -5,14 +5,14 @@ AR = ar -rcs
 FLAGS = -Wall -g
 
 ##Create .o files
-basicClassification.o: basicClassification.c 
-	$(GCC) $(FLAGS) -c basicClassification.c
-advancedClassificationLoop.o: advancedClassificationLoop.c 
-	$(GCC) $(FLAGS) -c advancedClassificationLoop.c
-advancedClassificationRecursion.o: advancedClassificationRecursion.c 
-	$(GCC) $(FLAGS) -c advancedClassificationRecursion.c 
-main.o: main.c 
-	$(GCC) $(FLAGS) -c main.c
+basicClassification.o: basicClassification.c NumClass.h
+	$(GCC) $(FLAGS) -fPIC -c basicClassification.c 
+advancedClassificationLoop.o: advancedClassificationLoop.c NumClass.h
+	$(GCC) $(FLAGS) -fPIC -c advancedClassificationLoop.c 
+advancedClassificationRecursion.o: advancedClassificationRecursion.c NumClass.h
+	$(GCC) $(FLAGS) -fPIC -c advancedClassificationRecursion.c 
+main.o: main.c NumClass.h
+	$(GCC) $(FLAGS) -fPIC -c main.c 
 
 
 ##Create libraries
