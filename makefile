@@ -26,7 +26,7 @@ libclassrec.a: basicClassification.o advancedClassificationRecursion.o
 	$(AR) libclassrec.a basicClassification.o advancedClassificationRecursion.o
 	ranlib libclassrec.a
 #Dynamic
-lloopd: libclassloops.so
+loopd: libclassloops.so
 libclassloops.so: basicClassification.o advancedClassificationLoop.o 
 	$(GCC) $(FLAGS) -shared -o libclassloops.so basicClassification.o advancedClassificationLoop.o -lm
 recursived: libclassrec.so
